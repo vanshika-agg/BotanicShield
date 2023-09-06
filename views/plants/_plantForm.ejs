@@ -1,0 +1,19 @@
+<div class="form-group">
+    <label for="Title">Plant Name</label>
+    <input required type="text" class="form-control" id="Title" name="name" value="<%= typeof plant !== 'undefined' ? plant.name : ''%> ">
+  </div>
+  <div class="form-group">
+    <label for="image">Plant Image Url</label>
+    <input required type="url" class="form-control" id="image" name="image" value="<%= typeof plant !== 'undefined' ? plant.image : ''%> ">
+  </div>
+  <div class="form-group">
+      <label for="description">Plant Description</label>
+      <textarea required name="description" class="form-control" id="description" rows="3"><%= typeof plant !== 'undefined' ? plant.description : ''%></textarea>
+    </div>
+  <div class="form-group">
+      <label class="form-check-label" for="price">Plant Price</label>
+      <input required type="number" name="price" class="form-control" id="Title" value="<%= typeof plant !== 'undefined' ? plant.price : ''%>">
+  </div>
+  <button type="submit" class="btn btn-success"><%= typeof plant === 'undefined' ? 'Create' : 'Update'%></button>
+  <a href="<%= typeof plant === 'undefined' ? '/plants' : `/plants/view/${plant._id}`%>" class="btn btn-success">Go Back</a>
+
